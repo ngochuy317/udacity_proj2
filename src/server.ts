@@ -29,7 +29,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   /**************************************************************************** */
   app.get( "/filteredimage/", async (req:express.Request, res:express.Response) => {
-    const image_url = req.query.image_url;
+    const image_url: string = req.query.image_url;
     if(image_url !== undefined && image_url.length === 0) {
       res.status(404).send("Image url is empty");
     }
